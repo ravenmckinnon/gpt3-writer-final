@@ -5,7 +5,7 @@ const configuration = new Configuration({
 });
 
 const openai = new OpenAIApi(configuration);
-const basePromptPrefix = `Create 10 news headlines in the style of NPR then rank them by their by SEO performance percentage.
+const basePromptPrefix = `Create 10 news headlines in the style of NPR and list their SEO performance percentage.
 Topic: `;
 const generateAction = async (req, res) => {
   // Run first prompt
