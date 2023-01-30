@@ -1,6 +1,6 @@
 const basePromptPrefix =
 `
-Write me 10 news headlines in the style of NPR:
+Write me 10 news headlines in the style of NPR.
 Topic:
 `
 
@@ -22,7 +22,7 @@ const generateAction = async (req, res) => {
   Take the topic news headlines below and rank them by SEO result performance. 
   Topic: ${req.body.userInput}
 
-  News Headlines: ${basePromptOutput.text}
+  News Headline: ${basePromptOutput.text}
 
   Rankings:
   `
