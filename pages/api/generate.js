@@ -5,7 +5,7 @@ const configuration = new Configuration({
 });
 
 const openai = new OpenAIApi(configuration);
-const basePromptPrefix = `Write me 10 news headlines in the style of NPR and rank them by Search Engine Optimization performance.
+const basePromptPrefix = `Write me 10 news headlines in the style of NPR and list their by SEO performance.
 Topic: `;
 const generateAction = async (req, res) => {
   // Run first prompt
