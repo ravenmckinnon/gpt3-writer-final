@@ -1,8 +1,4 @@
-const basePromptPrefix =
-`
-Write me 10 news headlines in the style of NPR.
-Topic:
-`
+import { Configuration, OpenAIApi } from 'openai';
 
 const generateAction = async (req, res) => {
   console.log(`API: ${basePromptPrefix}${req.body.userInput}`)
