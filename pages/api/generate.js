@@ -1,6 +1,8 @@
 const basePromptPrefix =
-`write me  10  news headlines in the style of NPR:
-topic:
+`
+Write me  10  news headlines in the style of NPR:
+Topic:
+
 `
 
 const generateAction = async (req, res) => {
@@ -9,7 +11,7 @@ const generateAction = async (req, res) => {
   const baseCompletion = await openai.createCompletion({
     model: 'text-davinci-003',
     prompt: `${basePromptPrefix}${req.body.userInput}`,
-    temperature: 0.7,
+    temperature: 0.8,
     max_tokens: 250,
   });
   
@@ -38,8 +40,7 @@ const generateAction = async (req, res) => {
   
   // Get the output
   const secondPromptOutput = secondPromptCompletion.data.choices.pop();
-
-  // Send over the Prompt #2's output to our UI instead of Prompt #1's.
+  \// Send over the Prompt #2's output to our UI instead of Prompt #1's.
   res.status(200).json({ output: secondPromptOutput });
 };
 
