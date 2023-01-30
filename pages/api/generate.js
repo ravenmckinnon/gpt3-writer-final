@@ -40,7 +40,7 @@ const generateAction = async (req, res) => {
   
   // Get the output
   const secondPromptOutput = secondPromptCompletion.data.choices.pop();
-  \// Send over the Prompt #2's output to our UI instead of Prompt #1's.
+  // Send over the Prompt #2's output to our UI instead of Prompt #1's.
   res.status(200).json({ output: secondPromptOutput });
 };
 
