@@ -1,7 +1,8 @@
 const basePromptPrefix =
 `
-Write me 10 news headlines in the style of NPR.
-Topic:
+Write me a detailed table of contents for a blog post with the title below.
+
+Title:
 `
 const generateAction = async (req, res) => {
   console.log(`API: ${basePromptPrefix}${req.body.userInput}`)
@@ -17,12 +18,13 @@ const generateAction = async (req, res) => {
   // I build Prompt #2.
   const secondPrompt = 
   ` 
-  Take the topic news headlines below and rank them by SEO result performance. 
-  Topic: ${req.body.userInput}
+  Take the table of contents and title of the blog post below and generate a blog post written in thwe style of Paul Graham. Make it feel like a story. Don't just list the points. Go deep into each one. Explain why.
 
-  News Headline: ${basePromptOutput.text}
+  Title: ${req.body.userInput}
 
-  Rankings:
+  Table of Contents: ${basePromptOutput.text}
+
+  Blog Post:
   `
   // I call the OpenAI API a second time with Prompt #2
   const secondPromptCompletion = await openai.createCompletion({
